@@ -1,9 +1,10 @@
 {
   "name": "angular-file-model",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "authors": [
     "Jose Luis Rivas <me@ghostbar.co>",
-    "Paul-Louis Nech <github@plnech.fr>"
+    "Paul-Louis Nech <github@plnech.fr>",
+    "Marc Mascort Bou <marc@articstudio.com>"
   ],
   "description": "Angular support for file in models",
   "main": "angular-file-model.js",

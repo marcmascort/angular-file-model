@@ -10,28 +10,27 @@
 
   angular.module('file-model', [])
 
-  .directive('fileModel', [
-    '$parse',
-    function ($parse) {
+  .directive('fileModel', function () {
       return {
+	require: 'ngModel',
         restrict: 'A',
-        link: function(scope, element, attrs) {
-          var model = $parse(attrs.fileModel);
-          var modelSetter = model.assign;
+        link: function($scope, element, attrs, ngModel) {
+          var checkIsValid = function(){
+            ngModel.$setValidity('validFile', element.val() !=='');
+       	  };
+        
+          checkIsValid();
 
-          element.bind('change', function(){
-            scope.$apply(function(){
-              if (attrs.multiple) {
-                modelSetter(scope, element[0].files);
-              }
-              else {
-                modelSetter(scope, element[0].files[0]);
-              }
+          element.bind('change', function () {
+            $scope.$apply(function () {
+                checkIsValid();
+                ngModel.$setViewValue(attrs.multiple ? element[0].files : element[0].files[0]);
+                ngModel.$render();
             });
           });
         }
       };
     }
-  ]);
+  );
 
 })();

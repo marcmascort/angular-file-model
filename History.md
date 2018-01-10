@@ -3,3 +3,9 @@
 
  * Renamed module to just `file-model` (Fixes #2)
  * basic test file
+
+0.4.0 / 2018-01-10 
+==================
+
+ * Use default angular ngModel
+ * Set model Validity

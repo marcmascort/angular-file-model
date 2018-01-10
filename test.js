@@ -17,7 +17,7 @@ describe('angular-file-model directive', function () {
 
   it('', function () {
     $rootScope.fileModel = '';
-    var element = $compile('<input type=\'file\' file-model=\'fileModel\'>')
+    var element = $compile('<input type=\'file\' file-model ng-model=\'fileModel\'>')
     ($rootScope);
     $rootScope.$digest();
     console.log($rootScope.fileModel);

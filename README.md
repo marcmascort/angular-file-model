@@ -23,7 +23,7 @@ Ready to use in your controllers!:
 
 `file.html`:
 
-    <input type='file' file-model='fileModel'>
+    <input type='file' file-model ng-model='fileModel'>
     <button type='button' ng-click='upload()'>Upload</button>
 
 `controller.js:`
